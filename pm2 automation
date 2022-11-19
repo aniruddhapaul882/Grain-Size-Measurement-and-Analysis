@@ -1,0 +1,11 @@
+$ npm install pm2@latest -g
+# OR 
+$ yarn global add pm2
+# Done!
+# Check if program runs.
+$ pm2 -v
+vx.x.x
+
+# With the PM2, you don’t need the while loop anymore, you can keep your code clean and left the restart job to PM2. The command to run your script with 10-second sleep after each job would look like this:
+# Jump into the directory where the python script is present
+$ pm2 start main.py --name job1-10s-delay --interpreter python3 --restart-delay 10000
