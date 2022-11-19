@@ -69,11 +69,11 @@ while True:
         for props in clusters:
             size = props.perimeter / (22 / 7)
             size = size * 0.8985 #pixel to distance ratio
-            if 45 <= size <= 60: #measurement level 1
+            if 45 <= size <= 60: # measurement level 1
                 INR += 1
-            elif 30 < size <= 45: #measurement level 2
+            elif 30 < size <= 45: # measurement level 2
                 OUTR1 += 1
-            elif 60 <= size <= 80: #measurement level 3
+            elif 60 <= size <= 80: # measurement level 3
                 OUTR2 += 1
         SUM = INR + OUTR1 + OUTR2
         if SUM > 0:
