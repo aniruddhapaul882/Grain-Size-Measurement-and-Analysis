@@ -82,17 +82,17 @@ while True:
             OUTR2P = (OUTR2 / SUM) * 100
 
         if INRP == 0 and OUTR1P == 0 and OUTR2P == 0:
-            client.publish("DALMIA/POC", "NO DATA", 2)
+            client.publish("AdvertisementTopic1", "NO DATA", 2)
             print("Null Sent")
         else:
             if ctr == 20:
-                client.publish("DALMIA/POC", str(round(INRP, 2)) + "/" + str(round(OUTR1P, 2)) + "/" + str(round(OUTR2P, 2)), 2)
+                client.publish("AdvertisementTopic2", str(round(INRP, 2)) + "/" + str(round(OUTR1P, 2)) + "/" + str(round(OUTR2P, 2)), 2)
                 print("Publish Successful")
                 print(str(round(INRP, 2)) + "/" + str(round(OUTR1P, 2)) + "/" + str(round(OUTR2P, 2)))
                 break
         # cv2.imshow("a", imgR)
         # cv2.imshow("b", sub_mask)
-        # cv2.imshow("c", img2)
+        cv2.imshow("c", img2)
         INR = 0
         OUTR1 = 0
         OUTR2 = 0
