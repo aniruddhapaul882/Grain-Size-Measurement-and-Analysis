@@ -16,7 +16,7 @@ def on_connect(client, userdata, flags, rc):
         print("Client is not connected")
 
 
-cap = cv2.VideoCapture('rtsp://*****:**********@************:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1')
+cap = cv2.VideoCapture('rtsp://*****:**********@************:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1') # This is to take camera feed using RTSP, for webcam/USBcam try "0" or "1"
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2, 2))
 # sub = cv2.createBackgroundSubtractorMOG2(500, 255, detectShadows=False)
 sub2 = cv2.bgsegm.createBackgroundSubtractorGMG()
