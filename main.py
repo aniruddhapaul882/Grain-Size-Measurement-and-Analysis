@@ -61,8 +61,13 @@ while True:
     else:
         ctr += 1
         # imgR = cv2.resize(img, (640, 480))
-        sub_mask = sub3.apply(img1)
-        sub_mask = cv2.morphologyEx(sub_mask, cv2.MORPH_RECT, kernel)
+        sub_mask0 = sub3.apply(img1)
+        print(ndimage.sum_labels(sub_mask0))
+        if ndimage.sum_labels(sub_mask0) <= 8000:
+            break
+        else:
+            pass
+        sub_mask = cv2.morphologyEx(sub_mask0, cv2.MORPH_RECT, kernel)
         label_mask, num_lables = ndimage.label(sub_mask, s)
         img2 = color.label2rgb(label_mask, bg_label=0)
         clusters = measure.regionprops(label_mask, img1)
@@ -91,7 +96,7 @@ while True:
                 print(str(round(INRP, 2)) + "/" + str(round(OUTR1P, 2)) + "/" + str(round(OUTR2P, 2)))
                 break
         # cv2.imshow("a", imgR)
-        # cv2.imshow("b", sub_mask)
+        # cv2.imshow("b", sub_mask0)
         cv2.imshow("c", img2)
         INR = 0
         OUTR1 = 0
