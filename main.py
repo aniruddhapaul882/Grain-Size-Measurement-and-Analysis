@@ -96,7 +96,7 @@ while True:
                 print(str(round(INRP, 2)) + "/" + str(round(OUTR1P, 2)) + "/" + str(round(OUTR2P, 2)))
                 break
         # cv2.imshow("a", imgR)
-        # cv2.imshow("b", sub_mask0)
+        cv2.imshow("b", sub_mask0)
         cv2.imshow("c", img2)
         INR = 0
         OUTR1 = 0
