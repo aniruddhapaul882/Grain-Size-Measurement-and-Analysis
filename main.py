@@ -38,6 +38,7 @@ OUTR1 = 0
 OUTR2 = 0
 INR = 0
 ctr = 0
+a = 0
 
 
 def on_message(client, userdata, message):
@@ -57,6 +58,11 @@ while True:
     # img = img1[y:y+h, x:x+w]
     if not success:
         print("unable to capture stream")
+        a += 1
+        if a > 10000: # to avoid rtsp stream capture faliure
+            break
+        else:
+            pass
         continue
     else:
         ctr += 1
